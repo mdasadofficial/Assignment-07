@@ -1,8 +1,8 @@
 import React from 'react';
 
-const navbar = () => {
-    return (
-        <div className="navbar bg-base-100 shadow-sm w-[80%] mx-auto py-5 ">
+const Navbar = () => {
+  return (
+         <div className="navbar bg-base-100 shadow-sm w-[80%] mx-auto py-5 ">
   <div className="flex-1">
     <a className="btn btn-ghost text-xl"><a className='text-2xl font-bold'>Keen</a>Keeper</a>
   </div>
@@ -19,8 +19,7 @@ const navbar = () => {
     </ul>
   </div>
 </div>
-    );
+  );
 };
 
-export default navbar;
-
+export default Navbar;
