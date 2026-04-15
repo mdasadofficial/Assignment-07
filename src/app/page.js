@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-amber-500">
 
-      <h2 className="bg-blue-500">Hello Next js</h2>
-      
+      <navbar></navbar>
+      Hello
 
     </div>
   );
