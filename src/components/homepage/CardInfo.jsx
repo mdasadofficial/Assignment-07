@@ -1,16 +1,17 @@
 // "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const CardInfo = ({ friend }) => {
-  console.log(friend);
-  const { name, status, tags, days_since_contact, picture } = friend;
+//   console.log(friend);
+  const { name, status, tags, days_since_contact, picture ,id} = friend;
   //   const res = await fetch (friend);
   return (
-    <div className="container mx-auto px-4">
+    <Link href={`/carddetails/${id}`} className="container mx-auto px-4">
       {/* Grid Container */}
       <div>
-        {/* David Kim Card */}
+        {/*  Card */}
         <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col items-center text-center">
           {/* Image placeholder */}
           <Image
@@ -38,7 +39,7 @@ const CardInfo = ({ friend }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
