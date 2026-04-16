@@ -1,4 +1,4 @@
-
+"use client"
 
 import React from 'react';
 import ImgLogo from '@/assets/logo.png'
