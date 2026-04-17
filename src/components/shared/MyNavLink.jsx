@@ -10,7 +10,7 @@ const MyNavLink = ({ href, children }) => {
 
     return (
         <Link href={href}
-            className={`${pathname === href ? "border-b-2 border-amber-400" : ""}`}
+            className={`${pathname === href ? " bg-emerald-900 rounded-2xl py-1 px-2 text-amber-50" : ""}`}
         >{children}</Link>
     );
 };
