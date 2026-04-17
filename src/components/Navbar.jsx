@@ -1,55 +1,80 @@
-"use client"
+"use client";
 
-import React from 'react';
-import ImgLogo from '@/assets/logo.png'
-import Image from 'next/image';
-import MyNavLink from './shared/MyNavLink';
-
+import React, { useState } from "react";
+import ImgLogo from "@/assets/logo.png";
+import Image from "next/image";
+import MyNavLink from "./shared/MyNavLink";
 
 const Navbar = () => {
-  const navItems = [
+  const [open, setOpen] = useState(false);
 
+  const navItems = [
     {
       path: "/",
-      text: "Home"
+      text: "Home",
+      icon: <i className="fa-solid fa-house"></i>,
     },
     {
       path: "/timeline",
-      text: "Timeline"
+      text: "Timeline",
+      icon: <i className="fa-regular fa-clock"></i>,
     },
     {
       path: "/stats",
-      text: "Stats"
+      text: "Stats",
+      icon: <i className="fa-solid fa-chart-line"></i>,
     },
-  ]
+  ];
+
   return (
-    <nav className="navbar bg-base-100 shadow-sm w-[80%] mx-auto py-5 flex justify-between items-center">
+    <nav className="bg-base-100 shadow-sm w-full">
+      <div className="w-[90%] mx-auto py-4 flex justify-between items-center">
 
-      {/* Left Side (Logo) */}
-      <div>
-        <Image src={ImgLogo} alt='Nav LogoImg' />
-      </div>
+        {/* Logo */}
+        <div>
+          <Image src={ImgLogo} alt="Logo" width={120} height={40} />
+        </div>
 
-      {/* Right Side (Menu) */}
-      <div>
-        <ul className="menu menu-horizontal gap-4">
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex gap-6 items-center">
           {navItems.map((item, index) => (
             <MyNavLink key={index} href={item.path}>
-              {item.text}
+              <span className="flex items-center gap-2">
+                {item.icon}
+                {item.text}
+              </span>
             </MyNavLink>
           ))}
+        </ul>
 
-          {/* <li>
-            <a><i className="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li>
-            <a><i className="fa-regular fa-clock"></i> Timeline</a>
-          </li>
-          <li>
-            <a><i className="fa-solid fa-chart-line"></i> Stats</a>
-          </li> */}
-        </ul> 
+        {/* Mobile Button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-2xl"
+        >
+          {open ? "✖" : "☰"}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden w-[90%] mx-auto pb-4">
+          <ul className="flex flex-col gap-4">
+            {navItems.map((item, index) => (
+              <MyNavLink
+                key={index}
+                href={item.path}
+                onClick={() => setOpen(false)}
+              >
+                <span className="flex items-center gap-2">
+                  {item.icon}
+                  {item.text}
+                </span>
+              </MyNavLink>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

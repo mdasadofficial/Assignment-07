@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/shared/Footer";
 import ContextProvider from "@/context/ContextProvider";
+import { ToastContainer } from "react-toastify";
 export const dynamic = "force-dynamic";
 
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         <Navbar></Navbar>
         <ContextProvider>{children}</ContextProvider>
         <Footer></Footer>
+        <ToastContainer/>
       </body>
     </html>
   );
