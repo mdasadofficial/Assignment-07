@@ -36,8 +36,8 @@ It shows your call, text, and video interaction history in a simple visual forma
 ## Goal of the Project
 The main goal of this project is to help users maintain better relationships by making communication tracking simple, visual, and accessible.
 
-## Live link
-[https://a7-keen-keeper.vercel.app/]
+## রিপোজিটরি লিংক
+https://github.com/mdasadofficial/Assignment-07
 
-## GitHub Repository
-[https://a7-keen-keeper.vercel.app/]
+## লাইভ সাইট এর লিংক
+https://b13-a7-kin-keeper-tau.vercel.app/

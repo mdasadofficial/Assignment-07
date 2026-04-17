@@ -34,8 +34,7 @@ const CardDetails = ({ myFriend }) => {
             </div>
             <h2 className="text-2xl font-bold text-slate-800">{name}</h2>
             <div
-              className={`px-3 py-1 inline text-xs font-medium rounded-full capitalize ${status === "overdue" ? "bg-red-600" : status === "on_track" ? "bg-green-500 " : status === "due_soon" ? "bg-amber-400" : ""}`}
-            >
+             className={`px-3 py-1 inline text-xs font-medium  p-2 mb-2 rounded-full capitalize ${status === "overdue" ? "bg-red-600 text-white" : status === "on_track" ? "bg-green-500 text-white" : status === "due_soon" ? "bg-amber-400 " : ""}`}>
               {status}
             </div>
 

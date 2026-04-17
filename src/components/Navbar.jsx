@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import ImgLogo from "@/assets/logo.png";
 import Image from "next/image";
 import MyNavLink from "./shared/MyNavLink";
+import { ChartNoAxesColumn, Clock3, House } from "lucide-react";
 
 
 const Navbar = () => {
@@ -13,17 +14,17 @@ const Navbar = () => {
     {
       path: "/",
       text: "Home",
-      icon: <i className="fa-solid fa-house"></i>,
+      icon: <House className="h-5 w-5"/>,
     },
     {
       path: "/timeline",
       text: "Timeline",
-      icon: <i className="fa-regular fa-clock"></i>,
+      icon: <Clock3 className="h-5 w-5" />,
     },
     {
       path: "/stats",
       text: "Stats",
-      icon: <i className="fa-solid fa-chart-line"></i>,
+      icon: <ChartNoAxesColumn className="h-5 w-5" />,
     },
   ];
 
