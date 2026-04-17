@@ -5,7 +5,7 @@ import VdoBtn from "../buttons/VdoBtn";
 
 const CardDetails = ({ myFriend }) => {
   console.log(myFriend);
-  
+
   const {
     name,
     status,
@@ -34,8 +34,18 @@ const CardDetails = ({ myFriend }) => {
             </div>
             <h2 className="text-2xl font-bold text-slate-800">{name}</h2>
             <div
-             className={`px-3 py-1 inline text-xs font-medium  p-2 mb-2 rounded-full capitalize ${status === "overdue" ? "bg-red-600 text-white" : status === "on_track" ? "bg-green-500 text-white" : status === "due_soon" ? "bg-amber-400 " : ""}`}>
-              {status}
+              className={`inline-block px-3 py-1 text-xs font-medium mb-4 rounded-full capitalize
+  ${
+    status === "overdue"
+      ? "bg-red-600 text-white"
+      : status === "on_track"
+        ? "bg-green-500 text-white"
+        : status === "due_soon"
+          ? "bg-amber-400 text-black"
+          : "bg-gray-200 text-black"
+  }`}
+            >
+              {status.replace("_", " ")}
             </div>
 
             {/* Image placeholder */}
@@ -113,13 +123,11 @@ const CardDetails = ({ myFriend }) => {
             <h3 className="font-bold text-slate-800 mb-4">Quick Check-In</h3>
             <div className="grid grid-cols-3 gap-4">
               <CallButton myFriend={myFriend} />
-              
-              <TextBtn myFriend={myFriend}  />
-              <VdoBtn myFriend={myFriend}/>
+
+              <TextBtn myFriend={myFriend} />
+              <VdoBtn myFriend={myFriend} />
             </div>
           </div>
-
-        
         </div>
       </div>
     </div>

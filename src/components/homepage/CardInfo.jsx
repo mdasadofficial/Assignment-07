@@ -4,8 +4,8 @@ import Link from "next/link";
 import React from "react";
 
 const CardInfo = ({ friend }) => {
-//   console.log(friend);
-  const { name, status, tags, days_since_contact, picture ,id} = friend;
+  //   console.log(friend);
+  const { name, status, tags, days_since_contact, picture, id } = friend;
   //   const res = await fetch (friend);
   return (
     <Link href={`/carddetails/${id}`} className="container mx-auto px-4">
@@ -27,17 +27,27 @@ const CardInfo = ({ friend }) => {
           </p>
           <div className="flex gap-4 mb-4">
             {tags.map((tag, index) => (
-            <div key={index} className="flex gap-1.5 flex-wrap justify-center">
-              <span className="px-3 py-1 bg-[#E8FAF0] text-[#1D996D] text-xs font-medium rounded-full uppercase
-              
-              ">
-                ${tag === "overdue" ? "bg-red-600" : tag === "on_track" ? "bg-green-500 " : tag === "due_soon" ? "bg-amber-400" : ""}
-                {tag}
-              </span>
-            </div>
-          ))}
+              <div
+                key={index}
+                className="flex gap-1.5 flex-wrap justify-center"
+              >
+                <span className="px-3 py-1 bg-[#E8FAF0] text-[#1D996D] text-xs font-medium rounded-full uppercase  mb- ">
+                  $
+                  {tag === "overdue"
+                    ? "bg-red-600"
+                    : tag === "on_track"
+                      ? "bg-green-500 "
+                      : tag === "due_soon"
+                        ? "bg-amber-400"
+                        : ""}
+                  {tag}
+                </span>
+              </div>
+            ))}
           </div>
-          <div className={`px-3 py-1 inline text-xs font-medium rounded-full capitalize ${status === "overdue" ? "bg-red-600 text-white" : status === "on_track" ? "bg-green-500 text-white" : status === "due_soon" ? "bg-amber-400 " : ""}`}>
+          <div
+            className={`px-3 py-1 inline text-xs font-medium rounded-full capitalize mb-2  ${status === "overdue" ? "bg-red-600 text-white" : status === "on_track" ? "bg-green-500 text-white" : status === "due_soon" ? "bg-amber-400 " : ""}`}
+          >
             {status}
           </div>
         </div>
