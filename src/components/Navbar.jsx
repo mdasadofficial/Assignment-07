@@ -5,6 +5,7 @@ import ImgLogo from "@/assets/logo.png";
 import Image from "next/image";
 import MyNavLink from "./shared/MyNavLink";
 
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -76,7 +77,12 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+    
+    
   );
 };
 
 export default Navbar;
+
+
+
