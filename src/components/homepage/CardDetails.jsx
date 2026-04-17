@@ -1,7 +1,11 @@
 import Image from "next/image";
-import React from "react";
+import CallButton from "../buttons/CallButton";
+import TextBtn from "../buttons/TextBtn";
+import VdoBtn from "../buttons/VdoBtn";
 
 const CardDetails = ({ myFriend }) => {
+  console.log(myFriend);
+  
   const {
     name,
     status,
@@ -29,7 +33,9 @@ const CardDetails = ({ myFriend }) => {
               ></Image>
             </div>
             <h2 className="text-2xl font-bold text-slate-800">{name}</h2>
-            <div className={`px-3 py-1 inline text-xs font-medium rounded-full capitalize ${status === "overdue" ? "bg-red-600" :  status === "on_track" ? "bg-green-500 " : status === "due_soon" ? "bg-amber-400" : ""}`}>
+            <div
+              className={`px-3 py-1 inline text-xs font-medium rounded-full capitalize ${status === "overdue" ? "bg-red-600" : status === "on_track" ? "bg-green-500 " : status === "due_soon" ? "bg-amber-400" : ""}`}
+            >
               {status}
             </div>
 
@@ -107,84 +113,14 @@ const CardDetails = ({ myFriend }) => {
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
             <h3 className="font-bold text-slate-800 mb-4">Quick Check-In</h3>
             <div className="grid grid-cols-3 gap-4">
-              <button className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl border border-transparent hover:border-gray-200">
-                <span className="text-xl">📞</span>{" "}
-                <span className="text-sm">Call</span>
-              </button>
-              <button className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl border border-transparent hover:border-gray-200">
-                <span className="text-xl">💬</span>{" "}
-                <span className="text-sm">Text</span>
-              </button>
-              <button className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl border border-transparent hover:border-gray-200">
-                <span className="text-xl">📹</span>{" "}
-                <span className="text-sm">Video</span>
-              </button>
+              <CallButton myFriend={myFriend} />
+              
+              <TextBtn myFriend={myFriend}  />
+              <VdoBtn myFriend={myFriend}/>
             </div>
           </div>
 
-          {/* Recent Interactions */}
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="font-bold text-slate-800">Recent Interactions</h3>
-              <button className="text-xs font-medium text-gray-500 border border-gray-200 px-3 py-1 rounded-md">
-                🕒 Full History
-              </button>
-            </div>
-            <div className="space-y-4">
-              {/* Interaction 1 */}
-              <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                <div className="flex items-center gap-4">
-                  <span className="text-xl bg-gray-50 p-2 rounded-lg">💬</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-800">Text</h4>
-                    <p className="text-xs text-gray-400">
-                      Asked for career advice
-                    </p>
-                  </div>
-                </div>
-                <span className="text-xs text-gray-400">Jan 28, 2026</span>
-              </div>
-              {/* Interaction 2 */}
-              <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                <div className="flex items-center gap-4">
-                  <span className="text-xl bg-gray-50 p-2 rounded-lg">🤝</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-800">Meetup</h4>
-                    <p className="text-xs text-gray-400">
-                      Industry conference meetup
-                    </p>
-                  </div>
-                </div>
-                <span className="text-xs text-gray-400">Jan 28, 2026</span>
-              </div>
-              {/* Interaction 3 */}
-              <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                <div className="flex items-center gap-4">
-                  <span className="text-xl bg-gray-50 p-2 rounded-lg">🤝</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-800">Video</h4>
-                    <p className="text-xs text-gray-400">
-                      Industry conference meetup
-                    </p>
-                  </div>
-                </div>
-                <span className="text-xs text-gray-400">Jan 28, 2026</span>
-              </div>
-              {/* Interaction 4 */}
-              <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                <div className="flex items-center gap-4">
-                  <span className="text-xl bg-gray-50 p-2 rounded-lg">🤝</span>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-800">Text</h4>
-                    <p className="text-xs text-gray-400">
-                      Industry conference meetup
-                    </p>
-                  </div>
-                </div>
-                <span className="text-xs text-gray-400">Jan 28, 2026</span>
-              </div>
-            </div>
-          </div>
+        
         </div>
       </div>
     </div>
