@@ -5,7 +5,9 @@ const FriendsDetailsPage = async ({ params }) => {
   const { id } = await params;
     console.log(Number(id));
   const dataPromise = async () => {
-    const res = await fetch("http://localhost:3000/data.json");
+    const res = await fetch("https://b13-a7-kin-keeper-tau.vercel.app/data.json" ,{
+    cache: "no-store",
+  });
     const data = res.json();
     // console.log(data);
     return data;

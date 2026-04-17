@@ -2,7 +2,9 @@ import React from "react";
 import CardInfo from "./CardInfo";
 
 const CardSection = async () => {
-  const res = await fetch("http://localhost:3000/data.json");
+  const res = await fetch("https://b13-a7-kin-keeper-tau.vercel.app/data.json",{
+    cache: "no-store",
+  });
 
   const friends = await res.json();
   // console.log(friends);
